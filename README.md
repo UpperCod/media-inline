@@ -1,6 +1,6 @@
 # media-inline
 
-It allows to homologate the behavior of ** image-set ** or ** img [srcset] **.
+It allows to homologate the behavior of **image-set** or **img[srcset]**.
 
 ## media(string expression, function callback)
 
@@ -24,7 +24,7 @@ let $el = document.querySelector("img");
 imageSet($el,`image_1.jpg 1400w image_2.jpg 1400w!`)
 ```
 
-> The previous example will change to the ** image 1.jpg ** only when `min-width: 1400px` is met, otherwise it will be changed to img_2.jpg only when` max-width: 1400px` is met.
+> The previous example will change to the **image_1.jpg** only when `min-width: 1400px` is met, otherwise it will be changed to img_2.jpg only when `max-width: 1400px` is met.
 
 ## srcSet(HTMLElement element, string expression)
 
@@ -38,4 +38,4 @@ let $el = document.querySelector("img");
 srcSet($el,`image_1.jpg 1400w image_2.jpg 1400w!`)
 ```
 
-> The previous example will change to the ** image 1.jpg ** only when `min-width: 1400px` is met, otherwise it will be changed to img_2.jpg only when` max-width: 1400px` is met.
+> The previous example will change to the **image_1.jpg** only when `min-width: 1400px` is met, otherwise it will be changed to **img_2.jpg** only when `max-width: 1400px` is met.
