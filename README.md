@@ -1,10 +1,10 @@
 # media-inline
 
-Permite homologar el comportamiento de **image-set** o **img[srcset]**.
+It allows to homologate the behavior of ** image-set ** or ** img [srcset] **.
 
 ## media(string expression, function callback)
 
-Transforma la expresión de cadena a un evento suscríbase a @media.
+Transform the string expression to an event subscribe to @media.
 
 **Example**: `value1 200w value2 300w value3 200w!`
 
