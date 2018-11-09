@@ -15,13 +15,13 @@ export function media(string, callback) {
     string.split(/([\d]+w(?:\!){0,1})/).reduce((value, after) => {
         let test = after.match(/(\d+)w(\!){0,1}/);
         if (test) {
-            let width = Number(test[1]);
+            let width = Number(test[1]),
+                type = test[2] ? "max" : "min";
             match.push({
+                type,
                 width,
                 value: value.replace(/^(\s+)|(\s+)$/g, ""),
-                media: window.matchMedia(
-                    `(${test[2] ? "max" : "min"}-width : ${width}px)`
-                )
+                media: window.matchMedia(`(${type}-width : ${width}px)`)
             });
             return "";
         } else {
@@ -34,12 +34,19 @@ export function media(string, callback) {
     match = match.sort((a, b) => (a.width > b.width ? -1 : 1));
 
     handler = () => {
-        match.some(({ media, value }) => {
-            if (media.matches) {
-                callback(value, media);
-                return true;
-            }
-        });
+        let group = match.filter(item => {
+                return item.media.matches;
+            }),
+            groupMax = group.filter(item => item.type === "max"),
+            select;
+
+        if (groupMax.length) {
+            select = groupMax.reverse()[0];
+        } else {
+            select = group[0];
+        }
+
+        if (select) callback(select.value, select.media);
     };
 
     match.forEach(({ media }) => media.addListener(handler));

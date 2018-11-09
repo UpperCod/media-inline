@@ -1,6 +1,6 @@
 {
   "name": "media-inline",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "This small liberia allows subscribing events to changes type @media",
   "main": "dist/media-inline.js",
   "umd:main": "dist/media-inline.umd.js",
@@ -11,6 +11,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/UpperCod/media-inline.git"
+  },
+  "scripts": {
+    "watch" : "microbundle -w",
+    "build" : "microbundle"
   },
   "devDependencies": {
     "microbundle": "^0.6.0"
