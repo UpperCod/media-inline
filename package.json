@@ -1,6 +1,6 @@
 {
   "name": "media-inline",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This small liberia allows subscribing events to changes type @media",
   "main": "dist/media-inline.js",
   "umd:main": "dist/media-inline.umd.js",
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "watch" : "microbundle -w",
-    "build" : "microbundle"
+    "build" : "microbundle",
+    "prepare" : "npm build"
   },
   "devDependencies": {
     "microbundle": "^0.6.0"
